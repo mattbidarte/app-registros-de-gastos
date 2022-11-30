@@ -1,0 +1,32 @@
+.dark{
+    background-color: #171717;
+    --gris: #171717;
+    --shadow: 9px 9px 21px #000000, -9px -9px 21px #1a1a1a;
+    color: #fff;
+}
+
+.dark h2,
+.dark h3,
+.dark select,
+.dark button,
+.dark i {
+    color: #fff;
+}
+
+.dark .container__registros-item {
+    border-bottom: 1px solid #fff;
+}
+
+.dark .formInput {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.dark .formInput:focus {
+    background-color: #383838;
+}
+
+.dark .registros__select {
+    border: 1px solid #fff
+}
+

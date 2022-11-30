@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- =============== LINK CSS =============== -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/dark.css">
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <!-- =============== LINK TOASTIFY =============== -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <!-- =============== LINK SWEETALERT =============== -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- =============== LINK ICONS =============== -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        
+        <title>App Resgistros de gastos</title>
+    </head>
+    <body>
+        <main class="main"> 
+            <section id="container" class="container">
+                <div class="togglebtn">
+                    <h3>Dark Mode</h3>
+                    <i class="bi bi-toggle-off"></i>
+                </div>
+                <!-- =============== APP PRINCIPAL =============== -->
+                <div class="container__grid">
+                    <!-- =============== BALANCES =============== -->
+                    <div class="container__balance-general">
+                        <i class="bi bi-wallet2"></i>
+                        <h2 id="tgeneral" class="contaner__balance-text general">Balance general: $</h2>       
+                    </div>
+                    <div class="container__balance-gastos">
+                        <i class="bi bi-arrow-down-right-square"></i>
+                        <h2 id="tgasto" class="contaner__balance-text">Gasto mensual: $</h2>
+                    </div>
+                    <div class="container__balance-ingresos">
+                        <i class="bi bi-arrow-up-right-square"></i>
+                        <h2 id="tingreso" class="contaner__balance-text">Ingreso mensual: $</h2>
+                    </div>
+                    <!-- =============== LOG DE REGISTROS =============== -->
+                    <div id="container__registros" class="container__registros">
+                        <div class="container__registros-filter">
+                            <h2 id="tregistro" class="contaner__balance-text tRegistros">Registros:</h2>
+                            <select class="registros__select" name="filtros" id="">
+                                <option value="noFilter" selected>Sin filtros</option>
+                                <optgroup label="Por registros">
+                                    <option value="ingresos">Solo ingresos</option>
+                                    <option value="gastos">Solo gastos</option>
+                                </optgroup>
+                                <optgroup label="Por fechas">
+                                    <option value="mes">Mes actual</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div id="container__registros-items" class="container__registros-items"></div>
+                    </div>
+                    <!-- =============== BOTONES =============== -->
+                    <div class="container__buttons">
+                        <button id="container__buttons--gasto" class="container__buttons--gasto"><i class="bi bi-arrow-down-right"></i>Añadir gasto</button>
+                        <button id="container__buttons--ingreso" class="container__buttons--ingreso"><i class="bi bi-arrow-up-right"></i>Añadir ingreso</button>
+                    </div>
+                    <div class="containerBtnReiniciar">
+                        <button id="btnReiniciar" class="btnReiniciar">Reiniciar valores</button>
+                    </div>
+                </div>
+                <div class="arrowDwn">
+                    <i class="bi bi-arrow-down-circle"></i>
+                </div>
+            </section>
+            
+            <!-- =============== APP SECUNDARIA LLAMANDO A API EXTERNA =============== -->
+            <section class="container containerDolar" id="container" >
+                <div class="contizacionHoy">
+                    <h2>Cotizacion Dolar y Euro hoy</h2>
+                    <i class="bi bi-currency-exchange"></i>
+                    <div class="contizacionHoy__form">
+                        <select name="selectMoneda" class="contizacionHoy__select">
+                            <option value="" disabled selected>Elige tu moneda local</option>
+                            <option value="USD">Dólar</option>
+                            <option value="EUR">Euro</option>
+                            <option value="ARS">Peso Argentino</option>
+                            <option value="UYU">Peso Uruguayo</option>
+                            <option value="CLP">Peso Chileno</option>
+                            <option value="MXN">Peso Mexicano</option>
+                            <option value="COP">Peso Colombiano</option>
+                        </select>
+                        <button class="contizacionHoy__btn">
+                            <i class="bi bi-arrow-left-right"></i>
+                            Hacer cambio
+                        </button>
+                    </div>
+                </div>
+                <div class="contizacionHoy__result">
+                    <h3><span>Dolar=</span> Elige tu moneda</h3>
+                    <h3><span>Euro=</span> Elige tu moneda</h3>
+                </div>
+                <div class="arrowUp">
+                    <i class="bi bi-arrow-up-circle"></i>
+                </div>
+            </section>
+        </main>
+
+        <!-- =============== LLAMADOS A SCRIPTS =============== -->
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
